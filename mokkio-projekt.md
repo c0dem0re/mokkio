@@ -59,7 +59,8 @@ Hand angelegte Palette ist gelöscht, es gilt nur noch die aus `about.json`.
 | Token | Hex | Verwendung |
 |---|---|---|
 | Ink | `#0B0D10` | Hintergrund |
-| Frost | `#E6EAEF` | Text |
+| Frost | `#E6EAEF` | Überschriften, Oberfläche |
+| Frost gedimmt | `#C9D1DA` | Fließtext im Beitrag |
 | Volt | `#C8FF38` | Akzent: Links, Primärknopf, aktive Zustände |
 | Graphite | `#20242A` | Karten, Knöpfe, Eingabefelder |
 | Graphite hell | `#30343A` | Kanten, Hover |
@@ -72,6 +73,12 @@ gehostet als woff2 mit latin-Subset, keine Einbindung über Google Fonts.
 
 Monospace läuft breiter als eine Proportionalschrift. Der Fließtext steht darum
 auf 0.9375rem mit 1.7 Durchschuss und leicht negativer Laufweite.
+
+**Helligkeitsstufen**
+Frost auf Ink sind 16,1:1, Kontrast am oberen Anschlag. Der Fließtext läuft
+deshalb eine Stufe dunkler auf 12,6:1, Überschriften und Fettsatz im Beitrag
+holen die volle Helligkeit zurück. Vorschautexte liegen bei 9,8:1, Sekundärtext
+in Steel bei 4,9:1. Alle vier Stufen über AA, die oberen drei über AAA.
 
 **Volt-Regel**
 Volt trägt die Links, genau einen gefüllten Knopf pro Ansicht, die Kante am
@@ -117,15 +124,11 @@ welche greift.
 
 ## Was als Nächstes ansteht
 
-1. **Fließtext-Helligkeit entscheiden.** Frost steht mit 16,1:1 auf Ink. Das ist
-   Kontrast am oberen Anschlag und liest sich hart. Vorschlag: Fließtext auf
-   `#C9D1DA` bei 12,6:1 abdunkeln, Überschriften auf Frost lassen. Das gäbe eine
-   Hierarchie, die bisher fehlt. Noch nicht entschieden.
-2. **Kategoriestruktur** aufbauen. Welche Kurse, welche Prompt-Bereiche, was frei
+1. **Kategoriestruktur** aufbauen. Welche Kurse, welche Prompt-Bereiche, was frei
    und was bezahlt ist. Die Farben setzt man pro Kategorie im Admin, nicht im
    CSS. Vorschlag: alle Kategorien in Steel, bezahlte Bereiche in Volt, dann
    trägt die Farbe eine Bedeutung.
-3. **Startthemen aufräumen.** Die drei Beiträge von `@system` sind
+2. **Startthemen aufräumen.** Die drei Beiträge von `@system` sind
    Standardtexte mit Discourse-Logo als Avatar. Vor den ersten echten Nutzern
    umschreiben oder löschen, Avatar tauschen.
 

@@ -78,6 +78,7 @@
   /* eigene Tokens, damit Werte an einer Stelle liegen */
   --mokkio-ink: #0b0d10;
   --mokkio-frost: #e6eaef;
+  --mokkio-frost-dim: #c9d1da;
   --mokkio-volt: #c8ff38;
   --mokkio-graphite: #20242a;
   --mokkio-graphite-hi: #30343a;
@@ -134,11 +135,29 @@ p {
   letter-spacing: -0.01em;
 }
 
+/* Fließtext läuft eine Stufe dunkler als die Oberfläche. Frost auf Ink
+   sind 16,1:1, Kontrast am oberen Anschlag, das schlägt beim Lesen auf.
+   12,6:1 liegt immer noch über AAA und liest sich ruhiger. */
+.cooked {
+  color: var(--mokkio-frost-dim);
+}
+
+/* Überschrift und Betonung holen die volle Helligkeit zurück, sonst
+   dimmt man die Hierarchie gleich mit weg. */
+.cooked h1,
+.cooked h2,
+.cooked h3,
+.cooked h4,
+.cooked h5 {
+  color: var(--mokkio-frost);
+}
+
 /* Fettsatz im Text zieht den echten 600er, nicht 700, weil es den
    Schnitt im Repo nicht gibt und der Browser sonst rechnet. */
 .cooked strong,
 .cooked b {
   font-weight: 600;
+  color: var(--mokkio-frost);
 }
 
 /* 3. Volt-Begrenzung
