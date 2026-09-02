@@ -164,10 +164,23 @@ anlegen, als Zielgruppe `pro` setzen. Fertig.
 Dafür spricht: kein Eigenbau, keine Wartung, Nutzer verwalten ihr Abo selbst
 über das Kundenportal, Kündigung entfernt die Gruppe automatisch.
 
-Dagegen spricht: Stripe ist reiner Zahlungsabwickler, kein Verkäufer. Umsatz-
-steuer, Rechnungsstellung und die Meldung für Verkäufe in andere EU-Länder
-bleiben bei dir. Und es kommt ein fünfter Zahlungsanbieter zu Fastbill, Paddle
-und Lemon Squeezy dazu.
+**Stripe Tax lässt sich dazuschalten.** Seit Juli 2024 hat das Plugin dafür das
+Site Setting `discourse_subscriptions_enable_automatic_tax`. Stripe berechnet
+dann den richtigen Satz je Land, prüft Umsatzsteuer-IDs und setzt bei
+Geschäftskunden im EU-Ausland das Reverse-Charge-Verfahren. Wer Stripe Checkout
+statt der klassischen Methode nutzt, bekommt dasselbe über Stripe direkt.
+
+Dagegen spricht: Stripe Tax rechnet und zieht ein, übernimmt aber nicht die
+Haftung. Registrierung in den Ländern, Voranmeldung und Abführung bleiben bei
+dir. Gegenüber dem Finanzamt bist weiterhin du der Verkäufer, nicht Stripe. Und
+es kommt ein fünfter Zahlungsanbieter zu Fastbill, Paddle und Lemon Squeezy
+dazu.
+
+**Neu seit Februar 2026: Stripe Managed Payments.** Das ist Stripes eigenes
+Merchant-of-Record-Produkt und damit ein dritter Weg. Ob
+`discourse-subscriptions` das ansprechen kann, ist ungeprüft. Das Plugin
+arbeitet gegen die normale Subscriptions-API, Managed Payments ist eine andere
+Integration. Vor einer Entscheidung dafür nachsehen.
 
 ### Weg B: Lemon Squeezy oder Paddle über n8n
 
@@ -188,13 +201,32 @@ bestehender Stack bleibt. n8n steht ohnehin auf der Liste.
 Dagegen spricht: Eigenbau, den du pflegen musst. Der Nutzer verwaltet sein Abo
 beim Anbieter, nicht im Portal. Kein Abo-Bereich in Discourse.
 
+### Lässt sich der Verkauf auf DACH beschränken?
+
+Das hilft steuerlich nicht, weil DACH drei verschiedene Regime sind.
+
+Deutschland ist der einfache Fall. Österreich ist EU-Ausland, für Verkäufe an
+Verbraucher dort greift ab der EU-weiten Schwelle von 10.000 Euro das
+OSS-Verfahren. Die Schweiz ist gar nicht in der EU und hat eigene Regeln mit
+eigener Registrierungspflicht für ausländische Anbieter digitaler Leistungen.
+
+Eine Beschränkung auf DACH nimmt dir also nichts ab, sie fügt mit der Schweiz
+sogar ein weiteres Regime hinzu. Was wirklich vereinfacht, ist eine
+Beschränkung auf Deutschland allein.
+
+Technisch ist die Beschränkung ohnehin wacklig. Das Plugin hat keine
+Länderauswahl. Über Stripe Radar lassen sich Zahlungen nach Kartenland
+blockieren, aber das Kartenland ist nicht der Wohnsitz. Ein Deutscher mit
+Auslandskarte fliegt raus, ein Auslandskunde mit deutscher Karte kommt rein.
+
 ### Was den Ausschlag gibt
 
-Nicht die Technik, sondern die Umsatzsteuer. Wenn du Kleinunternehmer bist oder
-unter der Schwelle für grenzüberschreitende digitale Leistungen bleibst, ist
-Weg A deutlich weniger Arbeit und du bist an einem Tag live. Sobald du regulär
-versteuerst und an Verbraucher in mehreren EU-Ländern verkaufst, nimmt dir Weg B
-den größeren Brocken ab.
+Nicht die Technik, sondern die Frage, wer die Steuer schuldet und meldet.
+
+Weg A mit Stripe Tax rechnet richtig, lässt die Pflichten aber bei dir. Das ist
+überschaubar, solange nur Deutschland im Spiel ist oder du unter der
+10.000-Euro-Schwelle bleibst. Weg B nimmt dir die Pflichten ab, kostet dafür
+Eigenbau und einen Prozentpunkt mehr Gebühr.
 
 Das ist eine Frage an deinen Steuerberater, nicht an das Theme. Die Antwort
 entscheidet den Weg.
