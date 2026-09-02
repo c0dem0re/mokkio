@@ -47,8 +47,8 @@ Zertifikate. Gibt es nicht, in keiner Form.
 Filterbare Tool-Datenbank. 28 Tools mit Preisvergleich und Kategorie-Filter sind
 in einem Forum eine Themenliste mit Tags. Weniger komfortabel als vorher.
 
-Glossar von A bis Z. 45 Begriffe als 45 Themen macht die Liste unbrauchbar.
-Besser: fünf Sammelbeiträge nach Kategorie mit Sprungmarken.
+Glossar von A bis Z. Die Themenliste sortiert nach Aktivität, nicht nach
+Alphabet. Ein Register-Beitrag muss das auffangen, siehe unten.
 
 **Entschieden am 02.09.2026: alles geht nach Discourse.** Fortschritt und
 Zertifikate werden nicht gebraucht. Das Vorbild ist Skool und Circle, also
@@ -130,6 +130,46 @@ Lektion durchsuchbar, Video allein findet die Suche nicht.
 Anders als bei Skool gibt es keinen Kurs-Reiter mit Kacheln und keine Anzeige,
 wie weit jemand ist. Der Lehrplan-Beitrag übernimmt beides, angeheftet und
 verlinkt.
+
+---
+
+## Glossar
+
+45 Begriffe aus dem alten Portal, in fünf Kategorien: Grundbegriffe,
+Prompt-Wissen, KI-Modelle und Tools, Technik, Automatisierung.
+
+**Ein Thema je Begriff**, nicht fünf Sammelbeiträge. Der Grund liegt darin, was
+Discourse mit einem Thema kann und mit einem Absatz nicht: Ein Begriff ist
+verlinkbar, und ein eingefügter Link zeigt eine Vorschaukarte mit der
+Definition. Er ist über den Titel auffindbar. Und unter ihm kann jemand
+nachfragen, was in einem Sammelbeitrag nicht geht.
+
+**Titel: Begriff, Mittelpunkt, Kurzdefinition.**
+
+    Token · die Einheit, in der KI Text zählt
+
+Der Begriff steht vorn, damit die Liste alphabetisch lesbar bleibt. Die
+Kurzdefinition macht die Themenliste selbsterklärend. Nebenbei löst das die
+Mindestlänge von 15 Zeichen für Titel, an der ein blankes `API` scheitern
+würde.
+
+**Aufbau des Beitrags**, gleich für jeden Begriff:
+
+    **Kurz gesagt.** Ein Satz, der reicht, wenn man nur den kennen will.
+
+    Zwei bis vier Sätze Erklärung, bei Bedarf mit Codeblock.
+
+    **Im Alltag.** Wofür man das praktisch braucht.
+
+    **Verwandt:** zwei bis drei andere Begriffe
+
+**Ein Tag je Kategorie**, also `grundbegriffe`, `prompt-wissen`, `ki-modelle`,
+`technik`, `automatisierung`. Ersetzt den Kategorie-Filter des alten Portals.
+
+**Ein angehefteter Register-Beitrag** mit allen 45 Begriffen nach Alphabet,
+jeder verlinkt. Das ersetzt die A-bis-Z-Leiste, denn die Themenliste sortiert
+nach Aktivität und nicht nach Alphabet. Ohne Register findet niemand einen
+bestimmten Begriff.
 
 ---
 
