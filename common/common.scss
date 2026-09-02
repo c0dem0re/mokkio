@@ -258,8 +258,13 @@ p {
   font-weight: 700;
 
   /* Setting volt_on_hover: an = Volt beim Überfahren, aus = nur Unterstrich.
-     Volt bleibt so eine bewusste Entscheidung, keine Nebenwirkung. */
-  @if $volt_on_hover {
+     Volt bleibt so eine bewusste Entscheidung, keine Nebenwirkung.
+
+     Discourse liefert Settings als unquoted string, nicht als Boolean
+     (Theme#to_scss_variable wickelt jeden Wert in unquote()). Ein bloßes
+     @if $volt_on_hover wäre darum immer wahr, auch bei "false". Nur der
+     Vergleich gegen "true" greift. */
+  @if $volt_on_hover == "true" {
     &:hover {
       color: var(--mokkio-volt);
     }
