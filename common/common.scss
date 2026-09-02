@@ -1,0 +1,366 @@
+/* ==========================================================================
+   mokkio Theme
+   1. Schriften
+   2. Typografie
+   3. Volt-Begrenzung
+   4. Flächen und Karten
+   5. Navigation und Sidebar
+   6. Themenliste
+   7. Codeblöcke
+   8. Formulare
+   ========================================================================== */
+
+/* 1. Schriften
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Manrope";
+  src: url($manrope_regular) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url($manrope_semibold) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url($manrope_bold) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url($plexmono_regular) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url($plexmono_medium) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Typografie
+   -------------------------------------------------------------------------- */
+
+:root {
+  --font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  --heading-font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  --d-font-family--monospace: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* eigene Tokens, damit Werte an einer Stelle liegen */
+  --mokkio-ink: #0b0d10;
+  --mokkio-paper: #f3f1ea;
+  --mokkio-volt: #c8ff38;
+  --mokkio-graphite: #20242a;
+  --mokkio-graphite-hi: #30343a;
+  --mokkio-steel: #747b84;
+  --mokkio-radius: 10px;
+}
+
+html,
+body,
+input,
+button,
+select,
+textarea,
+.d-header,
+.badge-category__name {
+  font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.title,
+.topic-title,
+.category-title {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+.btn,
+.nav-pills > li > a,
+.sidebar-section-link,
+.badge-category__name,
+label {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.cooked,
+.topic-body,
+p {
+  line-height: 1.6;
+}
+
+/* 3. Volt-Begrenzung
+   Volt bleibt Akzent. Genau ein gefüllter Knopf pro Ansicht.
+   -------------------------------------------------------------------------- */
+
+.btn-primary {
+  background: var(--mokkio-volt);
+  color: var(--mokkio-ink);
+  border: 1px solid var(--mokkio-volt);
+  border-radius: var(--mokkio-radius);
+  font-weight: 700;
+
+  .d-icon {
+    color: var(--mokkio-ink);
+  }
+
+  &:hover,
+  &:focus {
+    background: #d6ff5e;
+    color: var(--mokkio-ink);
+    border-color: #d6ff5e;
+
+    .d-icon {
+      color: var(--mokkio-ink);
+    }
+  }
+}
+
+/* alle übrigen Knöpfe auf Graphite, kein Volt */
+.btn-default,
+.btn-flat,
+.btn-icon,
+.btn-transparent,
+.select-kit.combo-box .select-kit-header,
+.topic-list-layout-trigger,
+.list-controls .btn {
+  background: var(--mokkio-graphite);
+  color: var(--mokkio-paper);
+  border: 1px solid var(--mokkio-graphite-hi);
+  border-radius: var(--mokkio-radius);
+
+  .d-icon {
+    color: var(--mokkio-steel);
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--mokkio-graphite-hi);
+    color: var(--mokkio-paper);
+
+    .d-icon {
+      color: var(--mokkio-paper);
+    }
+  }
+}
+
+/* Zähler und Plaketten in Steel statt Volt */
+.badge-notification,
+.sidebar-section-link-suffix.icon.unread,
+.topic-post-badges .badge-notification.unread-posts {
+  background: var(--mokkio-steel);
+  color: var(--mokkio-ink);
+}
+
+/* Ausnahme: ungelesene private Nachrichten dürfen Volt tragen */
+.header-dropdown-toggle .badge-notification.with-icon.new-pms {
+  background: var(--mokkio-volt);
+  color: var(--mokkio-ink);
+}
+
+/* 4. Flächen und Karten
+   -------------------------------------------------------------------------- */
+
+.topic-list-item,
+.topic-list-body .topic-list-item,
+.category-list-item,
+.user-content,
+.tabs-list .tab {
+  border-radius: var(--mokkio-radius);
+}
+
+.topic-list-item {
+  background: var(--mokkio-graphite);
+  border: 1px solid var(--mokkio-graphite-hi);
+
+  &:hover {
+    border-color: var(--mokkio-steel);
+  }
+}
+
+/* 5. Navigation und Sidebar
+   -------------------------------------------------------------------------- */
+
+.sidebar-section-link.active,
+.sidebar-section-link-wrapper .sidebar-section-link--active {
+  background: var(--mokkio-graphite);
+  color: var(--mokkio-paper);
+  border-left: 2px solid var(--mokkio-volt);
+  border-radius: 0 var(--mokkio-radius) var(--mokkio-radius) 0;
+
+  .sidebar-section-link-prefix .d-icon {
+    color: var(--mokkio-volt);
+  }
+}
+
+.sidebar-section-link:hover {
+  background: var(--mokkio-graphite);
+}
+
+.sidebar-section-header-text,
+.sidebar-section-header-caret {
+  color: var(--mokkio-steel);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+/* aktiver Tab: dünne Volt-Linie, kein gefüllter Bereich */
+.nav-pills > li > a.active,
+.navigation-container .nav-pills > li.active > a {
+  background: transparent;
+  color: var(--mokkio-paper);
+  border-bottom: 2px solid var(--mokkio-volt);
+  border-radius: 0;
+}
+
+.nav-pills > li > a {
+  color: var(--mokkio-steel);
+
+  &:hover {
+    background: transparent;
+    color: var(--mokkio-paper);
+  }
+}
+
+/* 6. Themenliste
+   -------------------------------------------------------------------------- */
+
+.topic-list-item .title,
+.topic-list-item .raw-topic-link {
+  color: var(--mokkio-paper);
+  font-weight: 700;
+
+  /* Setting volt_on_hover: an = Volt beim Überfahren, aus = nur Unterstrich.
+     Volt bleibt so eine bewusste Entscheidung, keine Nebenwirkung. */
+  @if $volt_on_hover {
+    &:hover {
+      color: var(--mokkio-volt);
+    }
+  } @else {
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+/* gelesene Themen: gedämpft, aber nicht braun */
+.topic-list-item.visited .title,
+.topic-list-item.visited .raw-topic-link {
+  color: var(--mokkio-steel);
+}
+
+.topic-excerpt,
+.topic-list-item .topic-excerpt {
+  color: #b4b8be;
+  line-height: 1.55;
+}
+
+.topic-list .badge-category__wrapper .badge-category {
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* 7. Codeblöcke
+   -------------------------------------------------------------------------- */
+
+pre,
+code,
+kbd,
+.d-editor-input {
+  font-family: var(--d-font-family--monospace);
+  font-size: 0.9rem;
+}
+
+pre {
+  background: var(--mokkio-graphite);
+  border: 1px solid var(--mokkio-graphite-hi);
+  border-left: 3px solid var(--mokkio-volt);
+  border-radius: var(--mokkio-radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+
+  code {
+    background: transparent;
+    padding: 0;
+    color: var(--mokkio-paper);
+  }
+}
+
+p > code,
+li > code {
+  background: var(--mokkio-graphite);
+  border: 1px solid var(--mokkio-graphite-hi);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  color: var(--mokkio-volt);
+}
+
+/* Kopier-Knopf am Codeblock */
+.codeblock-button {
+  background: var(--mokkio-graphite-hi);
+  color: var(--mokkio-paper);
+  border-radius: 6px;
+
+  &:hover {
+    background: var(--mokkio-volt);
+    color: var(--mokkio-ink);
+  }
+}
+
+/* 8. Formulare
+   -------------------------------------------------------------------------- */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+.select-kit .select-kit-body {
+  background: var(--mokkio-graphite);
+  border: 1px solid var(--mokkio-graphite-hi);
+  border-radius: var(--mokkio-radius);
+  color: var(--mokkio-paper);
+
+  &:focus {
+    border-color: var(--mokkio-volt);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(200, 255, 56, 0.15);
+  }
+}
+
+.search-menu .search-input,
+.floating-search-input-wrapper {
+  border-radius: var(--mokkio-radius);
+}
+
+::placeholder {
+  color: var(--mokkio-steel);
+}

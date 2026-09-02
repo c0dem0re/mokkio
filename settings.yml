@@ -1,0 +1,3 @@
+volt_on_hover:
+  default: true
+  description: "Themen-Titel färben sich beim Überfahren in Volt."

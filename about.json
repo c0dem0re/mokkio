@@ -1,0 +1,37 @@
+{
+  "name": "mokkio",
+  "component": false,
+  "about_url": "https://github.com/c0dem0re/mokkio",
+  "license_url": "https://github.com/c0dem0re/mokkio/blob/main/LICENSE",
+  "assets": {
+    "manrope_regular": "assets/fonts/Manrope-Regular.woff2",
+    "manrope_semibold": "assets/fonts/Manrope-SemiBold.woff2",
+    "manrope_bold": "assets/fonts/Manrope-Bold.woff2",
+    "plexmono_regular": "assets/fonts/IBMPlexMono-Regular.woff2",
+    "plexmono_medium": "assets/fonts/IBMPlexMono-Medium.woff2"
+  },
+  "color_schemes": {
+    "mokkio": {
+      "primary": "F3F1EA",
+      "primary-medium": "B4B8BE",
+      "primary-low": "20242A",
+      "primary-low-mid": "30343A",
+      "primary-very-low": "15181D",
+      "secondary": "0B0D10",
+      "tertiary": "C8FF38",
+      "tertiary-low": "2A3315",
+      "quaternary": "747B84",
+      "header_background": "0B0D10",
+      "header_primary": "F3F1EA",
+      "highlight": "C8FF38",
+      "highlight-high": "0B0D10",
+      "highlight-medium": "2A3315",
+      "highlight-low": "1A1F12",
+      "danger": "E24B4A",
+      "danger-low": "3A1B1B",
+      "success": "C8FF38",
+      "success-low": "2A3315",
+      "love": "E24B4A"
+    }
+  }
+}
