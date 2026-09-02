@@ -50,10 +50,14 @@ in einem Forum eine Themenliste mit Tags. Weniger komfortabel als vorher.
 Glossar von A bis Z. 45 Begriffe als 45 Themen macht die Liste unbrauchbar.
 Besser: fünf Sammelbeiträge nach Kategorie mit Sprungmarken.
 
-**Konsequenz.** Wenn Fortschritt und Zertifikate für die Kurse wichtig sind,
-bleibt Discourse die Community und der Kurs liegt woanders. Wenn sie
-verzichtbar sind, geht alles in eine Plattform. Das ist die erste Entscheidung,
-alles Weitere hängt daran.
+**Entschieden am 02.09.2026: alles geht nach Discourse.** Fortschritt und
+Zertifikate werden nicht gebraucht. Das Vorbild ist Skool und Circle, also
+Community und Kurse in einem Werkzeug, ohne Lernplattform-Beiwerk. Die beiden
+Lücken oben sind damit keine Lücken mehr, sondern gestrichener Umfang.
+
+Was bleibt, ist die Tool-Datenbank. 28 Tools mit Preisvergleich werden im Forum
+unbequemer als im alten Portal. Das ist der Preis für eine Plattform statt
+zwei.
 
 ---
 
@@ -108,10 +112,24 @@ Admin gesetzt, nicht im CSS.
 `Website-Feedback` bleibt, `Team` bleibt als Staff-Bereich.
 
 **Kurse.** Sechs Unterkategorien für sechs Kurse wären zu viel Gerüst. Statt
-dessen eine Kategorie `Kurse`, ein Thema je Lektion, ein Tag je Kurs, dazu ein
-angehefteter Übersichtsbeitrag pro Kurs, der die Lektionen in Reihenfolge
-verlinkt. Der Übersichtsbeitrag ersetzt das Fortschritts-Tracking, so gut es
-ohne Technik geht.
+dessen eine Kategorie `Kurse` und darin je Kurs:
+
+- ein angehefteter Lehrplan-Beitrag, der alle Lektionen in Reihenfolge verlinkt
+- ein Thema je Lektion, Titel mit vorangestellter Nummer, etwa
+  `03 · Prompts strukturieren`
+- ein Tag je Kurs, etwa `kurs-prompting`, an allen Themen des Kurses
+
+Der Lehrplan-Beitrag ist die Kursseite. Er trägt Beschreibung, Dauer,
+Voraussetzungen und die Lektionsliste. Über den Tag kommt man von jeder Lektion
+zurück zum ganzen Kurs.
+
+Eine Lektion besteht aus eingebettetem Video, den Kernpunkten als Text, der
+Übung und den Kommentaren darunter. Der Textteil ist keine Zugabe: Er macht die
+Lektion durchsuchbar, Video allein findet die Suche nicht.
+
+Anders als bei Skool gibt es keinen Kurs-Reiter mit Kacheln und keine Anzeige,
+wie weit jemand ist. Der Lehrplan-Beitrag übernimmt beides, angeheftet und
+verlinkt.
 
 ---
 
@@ -199,9 +217,22 @@ Kunden, dass eine Kategorie falsch steht.
 
 ---
 
+## Videohosting für die Kurse
+
+Das steht in `mokkio-projekt.md` unter offenen Entscheidungen und rückt jetzt
+auf den kritischen Pfad. Die Kategorierechte schützen den Beitrag, nicht das
+Video darin. Ein eingebettetes YouTube-Video ist über seine Adresse für jeden
+erreichbar, der sie hat, auch ohne Konto und ohne Abo. Bezahlte Lektionen
+laufen damit aus.
+
+Was hilft: Bunny Stream mit signierten Links, die nur befristet und nur auf der
+eigenen Domain funktionieren. Vimeo kann Domain-Sperren, das ist schwächer,
+aber vorhanden. Vor der ersten bezahlten Lektion muss das stehen.
+
+---
+
 ## Offene Fragen
 
-- Kurse mit Fortschritt und Zertifikat, oder reicht die Übersicht als Beitrag?
 - Bleibt es bei einer Stufe PRO, oder kommt später ein Jahresabo dazu?
 - Was passiert mit `portal.greatik.de`, sobald mokkio steht? Abschalten,
   umleiten oder als Landingpage behalten?
