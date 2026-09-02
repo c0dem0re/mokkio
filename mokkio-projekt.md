@@ -106,6 +106,7 @@ Umzug mit im Repo, damit Doku und Code denselben Stand teilen.
     settings.yml         Theme-Einstellungen
     assets/fonts/        sechs woff2-Dateien
     mokkio-projekt.md    diese Datei
+    mokkio-struktur.md   Kategorien, Zugriff, Bezahlung
 
 **Ablauf bei Änderungen:** im Repo arbeiten, pushen, im Discourse-Admin unter
 Erscheinungsbild → Themes & Komponenten → mokkio auf "Nach Updates suchen"
@@ -124,10 +125,10 @@ welche greift.
 
 ## Was als Nächstes ansteht
 
-1. **Kategoriestruktur** aufbauen. Welche Kurse, welche Prompt-Bereiche, was frei
-   und was bezahlt ist. Die Farben setzt man pro Kategorie im Admin, nicht im
-   CSS. Vorschlag: alle Kategorien in Steel, bezahlte Bereiche in Volt, dann
-   trägt die Farbe eine Bedeutung.
+1. **Kategoriestruktur** aufbauen. Der Entwurf steht in `mokkio-struktur.md`:
+   acht Kategorien, PRO jeweils als Unterkategorie, Farbregel Steel für frei und
+   Volt für bezahlt. Dort stehen auch die beiden Wege für die Bezahlung und die
+   Lücken, die Discourse gegenüber dem alten Portal hat.
 2. **Startthemen aufräumen.** Die drei Beiträge von `@system` sind
    Standardtexte mit Discourse-Logo als Avatar. Vor den ersten echten Nutzern
    umschreiben oder löschen, Avatar tauschen.
