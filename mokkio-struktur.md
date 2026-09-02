@@ -207,7 +207,7 @@ Kategorie steht auf `created` aufsteigend.
 **Der Haken:** Ein später ergänzter Begriff landet unten, nicht an seiner
 alphabetischen Stelle. Wer einen hinzufügt, setzt über das Schraubenschlüssel-
 Menü unter „Zeitstempel ändern" einen Wert, der zwischen die Nachbarn passt.
-Steht auch im Register-Beitrag.
+Und trägt ihn im Register nach.
 
 Die Kategorie ist schreibgeschützt: `jeder` hat nur Ansehen, nur das Team legt
 an. Nachrichten unter Glossareinträgen gäbe es sonst, und ein Glossar ist keine
