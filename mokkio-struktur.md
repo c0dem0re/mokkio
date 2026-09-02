@@ -166,7 +166,28 @@ würde.
 **Ein Tag je Kategorie**, also `grundbegriffe`, `prompt-wissen`, `ki-modelle`,
 `technik`, `automatisierung`. Ersetzt den Kategorie-Filter des alten Portals.
 
-**Ein angehefteter Register-Beitrag** mit allen 45 Begriffen nach Alphabet,
+### Produkte gehören nicht ins Glossar
+
+Von den 45 Einträgen sind 13 keine Begriffe, sondern Produkte: ChatGPT, Claude,
+Copilot, DALL-E, GPT-4o, Gemini, Midjourney, Perplexity, Wispr Flow, Make, n8n,
+Zapier, Stable Diffusion.
+
+Die gehören nach `KI-Tools`, wo ohnehin Steckbriefe mit Preis und Bewertung
+geplant sind. Sonst steht ChatGPT zweimal im Portal und altert an zwei Stellen
+unterschiedlich. Es bleiben 32 echte Begriffe im Glossar.
+
+Der Unterschied ist nicht formal. Ein Begriff wie Token oder Halluzination gilt
+in fünf Jahren noch. Ein Produkteintrag ist eine Momentaufnahme und braucht
+Pflege. Die beiden in einer Kategorie zu mischen heißt, alles wie das
+Kurzlebigste behandeln zu müssen.
+
+### Keine Versionsnummern
+
+Auch in den verbleibenden Begriffen: keine Modellnamen, keine Versionen, kein
+„aktuell" und kein „neueste". Der Eintrag `Multimodal` erklärt sich ohne den
+Zusatz, welches Modell das gerade kann.
+
+**Ein angehefteter Register-Beitrag** mit allen Begriffen nach Alphabet,
 jeder verlinkt. Das ersetzt die A-bis-Z-Leiste, denn die Themenliste sortiert
 nach Aktivität und nicht nach Alphabet. Ohne Register findet niemand einen
 bestimmten Begriff.
