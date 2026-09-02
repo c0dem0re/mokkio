@@ -1,12 +1,18 @@
 # Schriftdateien
 
-Hier gehören fünf Dateien rein, jeweils als woff2 mit latin-Subset:
+Hier gehören sechs Dateien rein, jeweils als woff2 mit latin-Subset:
+
+Manrope trägt nur die Überschriften:
 
 - Manrope-Regular.woff2     (400)
 - Manrope-SemiBold.woff2    (600)
 - Manrope-Bold.woff2        (700)
-- IBMPlexMono-Regular.woff2 (400)
-- IBMPlexMono-Medium.woff2  (500)
+
+IBM Plex Mono trägt Oberfläche, Fließtext und Code:
+
+- IBMPlexMono-Regular.woff2  (400)
+- IBMPlexMono-Medium.woff2   (500)
+- IBMPlexMono-SemiBold.woff2 (600, Fettsatz im Fließtext)
 
 Die Namen müssen exakt so lauten, sonst findet about.json sie nicht.
 Fehlt eine Datei, bricht die Theme-Kompilierung in Discourse ab.

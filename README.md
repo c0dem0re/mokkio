@@ -15,8 +15,8 @@ mokkio-Designsystem.
 
 ## Schriften
 
-Manrope 400/600/700 für die Oberfläche, IBM Plex Mono 400/500 für Code.
-Dateien liegen unter `assets/fonts/`.
+Manrope 700 für Überschriften. IBM Plex Mono 400/500/600 für Oberfläche,
+Fließtext und Code. Dateien liegen unter `assets/fonts/`.
 
 ## Struktur
 

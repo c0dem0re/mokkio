@@ -8,6 +8,7 @@
     "manrope_semibold": "assets/fonts/Manrope-SemiBold.woff2",
     "manrope_bold": "assets/fonts/Manrope-Bold.woff2",
     "plexmono_regular": "assets/fonts/IBMPlexMono-Regular.woff2",
+    "plexmono_semibold": "assets/fonts/IBMPlexMono-SemiBold.woff2",
     "plexmono_medium": "assets/fonts/IBMPlexMono-Medium.woff2"
   },
   "color_schemes": {
