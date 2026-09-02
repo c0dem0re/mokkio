@@ -187,6 +187,24 @@ Auch in den verbleibenden Begriffen: keine Modellnamen, keine Versionen, kein
 „aktuell" und kein „neueste". Der Eintrag `Multimodal` erklärt sich ohne den
 Zusatz, welches Modell das gerade kann.
 
+### Alphabetisch sortieren geht nicht
+
+Am 02.09.2026 an der laufenden Instanz getestet. Eine Kategorie kennt die
+Einstellung `sort_order`, und `title` ist ein gültiger Wert. Aber:
+
+    sort_order: title, sort_ascending: false   →  Z bis A, funktioniert
+    sort_order: title, sort_ascending: true    →  fällt auf Standard zurück
+
+Aufsteigend greift nicht, weder über die Kategorie-Einstellung noch über
+`?order=title&ascending=true` in der Adresse. Z bis A wäre schlechter als gar
+keine Sortierung, deshalb steht die Kategorie auf Standard.
+
+Ein Umweg über das Theme scheitert an der Blätterung: Ab 30 Themen lädt
+Discourse nach, und nachgeladene Einträge landen unten. Eine Sortierung im
+Browser wäre nach dem ersten Nachladen falsch.
+
+Deshalb trägt das Register die Navigation, nicht die Themenliste.
+
 **Ein angehefteter Register-Beitrag** mit allen Begriffen nach Alphabet,
 jeder verlinkt. Das ersetzt die A-bis-Z-Leiste, denn die Themenliste sortiert
 nach Aktivität und nicht nach Alphabet. Ohne Register findet niemand einen
