@@ -217,10 +217,23 @@ p {
 
 /* Zähler und Plaketten in Steel statt Volt */
 .badge-notification,
-.sidebar-section-link-suffix.icon.unread,
 .topic-post-badges .badge-notification.unread-posts {
   background: var(--mokkio-steel);
   color: var(--mokkio-ink);
+}
+
+/* Der Ungelesen-Punkt in der Seitenleiste ist ein SVG-Kreis, keine
+   Plakette. Ein Hintergrund macht daraus ein Kästchen hinter dem Punkt.
+   Also nur die Füllung umfärben, von Volt auf Steel: bei zwölf
+   Kategorien wären zwölf Volt-Punkte kein Akzent mehr. */
+.sidebar-section-link-suffix.icon.unread {
+  background: transparent;
+
+  svg,
+  .d-icon {
+    fill: var(--mokkio-steel);
+    color: var(--mokkio-steel);
+  }
 }
 
 /* Ausnahme: ungelesene private Nachrichten dürfen Volt tragen */
