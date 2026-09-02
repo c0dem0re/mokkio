@@ -8,6 +8,7 @@
    6. Themenliste
    7. Codeblöcke
    8. Formulare
+   9. Discourse-Kernvariablen
    ========================================================================== */
 
 /* 1. Schriften
@@ -81,6 +82,7 @@
   --mokkio-graphite: #20242a;
   --mokkio-graphite-hi: #30343a;
   --mokkio-steel: #747b84;
+  --mokkio-tertiary-low: #2a3315;
   --mokkio-radius: 10px;
 }
 
@@ -392,4 +394,29 @@ textarea,
 
 ::placeholder {
   color: var(--mokkio-steel);
+}
+
+/* 9. Discourse-Kernvariablen
+   Discourse setzt einige Hover- und Auswahlflächen als feste helle
+   Werte, die nicht aus der Palette kommen: #f2f2f2 und #d1f0ff.
+   Auf einem dunklen Theme steht dadurch heller Text auf hellem
+   Grund, im Benutzermenü etwa ist die Zeile unter dem Zeiger nicht
+   mehr lesbar. Nachgewiesen im laufenden Portal über
+   getComputedStyle, nicht geraten.
+   -------------------------------------------------------------------------- */
+
+:root {
+  --d-hover: var(--mokkio-graphite-hi);
+  --d-button-flat-bg-color--hover: var(--mokkio-graphite-hi);
+  --d-button-flat-bg-color--focus: var(--mokkio-graphite-hi);
+  --d-header-icon-background--hover: var(--mokkio-graphite-hi);
+
+  /* Ausgewählt trägt einen dunklen Volt-Ton, damit es sich vom
+     bloßen Überfahren unterscheidet. */
+  --d-selected: var(--mokkio-tertiary-low);
+  --token-color-surface-selected: var(--mokkio-tertiary-low);
+
+  /* Der aktive Sidebar-Eintrag hat schon seine Volt-Kante aus
+     Abschnitt 5, hier reicht Graphite. */
+  --d-sidebar-active-background: var(--mokkio-graphite);
 }
