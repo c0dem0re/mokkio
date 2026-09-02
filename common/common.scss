@@ -76,7 +76,7 @@
 
   /* eigene Tokens, damit Werte an einer Stelle liegen */
   --mokkio-ink: #0b0d10;
-  --mokkio-paper: #f3f1ea;
+  --mokkio-frost: #e6eaef;
   --mokkio-volt: #c8ff38;
   --mokkio-graphite: #20242a;
   --mokkio-graphite-hi: #30343a;
@@ -175,7 +175,7 @@ p {
 .topic-list-layout-trigger,
 .list-controls .btn {
   background: var(--mokkio-graphite);
-  color: var(--mokkio-paper);
+  color: var(--mokkio-frost);
   border: 1px solid var(--mokkio-graphite-hi);
   border-radius: var(--mokkio-radius);
 
@@ -186,10 +186,10 @@ p {
   &:hover,
   &:focus {
     background: var(--mokkio-graphite-hi);
-    color: var(--mokkio-paper);
+    color: var(--mokkio-frost);
 
     .d-icon {
-      color: var(--mokkio-paper);
+      color: var(--mokkio-frost);
     }
   }
 }
@@ -234,7 +234,7 @@ p {
 .sidebar-section-link.active,
 .sidebar-section-link-wrapper .sidebar-section-link--active {
   background: var(--mokkio-graphite);
-  color: var(--mokkio-paper);
+  color: var(--mokkio-frost);
   border-left: 2px solid var(--mokkio-volt);
   border-radius: 0 var(--mokkio-radius) var(--mokkio-radius) 0;
 
@@ -259,7 +259,7 @@ p {
 .nav-pills > li > a.active,
 .navigation-container .nav-pills > li.active > a {
   background: transparent;
-  color: var(--mokkio-paper);
+  color: var(--mokkio-frost);
   border-bottom: 2px solid var(--mokkio-volt);
   border-radius: 0;
 }
@@ -269,7 +269,7 @@ p {
 
   &:hover {
     background: transparent;
-    color: var(--mokkio-paper);
+    color: var(--mokkio-frost);
   }
 }
 
@@ -278,7 +278,7 @@ p {
 
 .topic-list-item .title,
 .topic-list-item .raw-topic-link {
-  color: var(--mokkio-paper);
+  color: var(--mokkio-frost);
   font-weight: 700;
 
   /* Setting volt_on_hover: an = Volt beim Überfahren, aus = nur Unterstrich.
@@ -308,7 +308,7 @@ p {
 
 .topic-excerpt,
 .topic-list-item .topic-excerpt {
-  color: #b4b8be;
+  color: var(--primary-medium);
   line-height: 1.55;
 }
 
@@ -339,7 +339,7 @@ pre {
   code {
     background: transparent;
     padding: 0;
-    color: var(--mokkio-paper);
+    color: var(--mokkio-frost);
   }
 }
 
@@ -355,7 +355,7 @@ li > code {
 /* Kopier-Knopf am Codeblock */
 .codeblock-button {
   background: var(--mokkio-graphite-hi);
-  color: var(--mokkio-paper);
+  color: var(--mokkio-frost);
   border-radius: 6px;
 
   &:hover {
@@ -376,7 +376,7 @@ textarea,
   background: var(--mokkio-graphite);
   border: 1px solid var(--mokkio-graphite-hi);
   border-radius: var(--mokkio-radius);
-  color: var(--mokkio-paper);
+  color: var(--mokkio-frost);
 
   &:focus {
     border-color: var(--mokkio-volt);

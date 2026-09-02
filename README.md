@@ -8,7 +8,7 @@ mokkio-Designsystem.
 | Token     | Hex       | Verwendung                    |
 |-----------|-----------|-------------------------------|
 | Ink       | `#0B0D10` | Hintergrund                   |
-| Paper     | `#F3F1EA` | Text                          |
+| Frost     | `#E6EAEF` | Text                          |
 | Volt      | `#C8FF38` | Akzent, 3 bis 7 Prozent       |
 | Graphite  | `#20242A` | Karten, Knöpfe, Eingabefelder |
 | Steel     | `#747B84` | Sekundärtext, Zähler          |
