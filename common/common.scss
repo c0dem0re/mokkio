@@ -620,6 +620,18 @@ textarea,
    Farbe, fällt seine Kennzeichnung weg.
    -------------------------------------------------------------------------- */
 
+/* Die Seitenleiste lief auf 17em. Zusammen mit der Wortmarke reichte
+   das für die längeren Namen nicht, "Prompt-Bibliothek" und "Fragen
+   und Austausch" brachen mit Auslassungspunkten ab. Bei 20em steht
+   jeder Kategoriename vollständig da, nachgemessen über scrollWidth.
+
+   Die Spalte daneben verliert dabei nichts: Discourse rechnet die
+   Seitenbreite als --d-sidebar-width plus --d-max-width. Die Seite
+   wird also breiter, der Inhalt bleibt auf seinen 1110 Pixeln. */
+:root {
+  --d-sidebar-width: 20em;
+}
+
 /* Seitenleiste: ein Wort statt eines Schlosses. Ein Wort liest sich
    auf einen Blick, neun Pixel Vorhängeschloss nicht. */
 .sidebar-section-link:has(.sidebar-section-link-prefix[style*="c8ff38" i]) {
