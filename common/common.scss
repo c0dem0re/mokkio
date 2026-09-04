@@ -12,6 +12,7 @@
    10. Kopfzeile und Kopfbereich
    11. Grundschriftgrad
    12. Seitenfuß
+   13. Fortschrittszähler
    ========================================================================== */
 
 /* 1. Schriften
@@ -545,7 +546,7 @@ textarea,
    -------------------------------------------------------------------------- */
 
 :root {
-  --base-font-size: 0.9375em; /* 16 -> 15 Pixel */
+  --base-font-size: 0.875em; /* 16 -> 14 Pixel */
 }
 
 /* 12. Seitenfuß
@@ -567,4 +568,20 @@ textarea,
    Portal nicht überschreiben, auch nicht mit !important. */
 .wrap:has(> .powered-by-discourse) {
   padding-bottom: 2rem;
+}
+
+/* 13. Fortschrittszähler
+   Der Zähler am Fuß eines Themas zieht Rahmen und Füllung aus
+   --tertiary-low, in dieser Palette ein dunkles Oliv. Neben Graphite
+   steht das als Fremdkörper in der Zeile. Discourse adressiert ihn
+   über zwei IDs, deshalb hier dieselbe Tiefe.
+   -------------------------------------------------------------------------- */
+
+#topic-progress-wrapper #topic-progress {
+  border: 1px solid var(--mokkio-graphite-hi);
+  border-radius: var(--mokkio-radius);
+
+  .bg {
+    background: var(--mokkio-graphite);
+  }
 }

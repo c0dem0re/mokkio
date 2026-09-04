@@ -1,15 +1,7 @@
 /* Anpassungen nur für Mobil */
 
-.topic-list-item {
-  padding: 0.75rem;
-}
-
 h1 {
   font-size: 1.75rem;
-}
-
-.btn-primary {
-  width: 100%;
 }
 
 /* Die Kopfzeile aus common.scss läuft auf 64 Pixel. Auf dem Telefon
@@ -20,9 +12,9 @@ h1 {
 
 /* IBM Plex Mono trägt auf dem Telefon dick auf: neben den kleinen
    Symbolen wirkten 15 Pixel massig, Schrift und Icons standen nicht
-   im Verhältnis. Eine Stufe runter, die Skala rückt geschlossen mit. */
+   im Verhältnis. Zwei Stufen runter, die Skala rückt geschlossen mit. */
 :root {
-  --base-font-size: 0.875em; /* 16 -> 14 Pixel */
+  --base-font-size: 0.8125em; /* 16 -> 13 Pixel */
 }
 
 /* Kopfzeile und Inhalt liefen auf verschiedenen Kanten: die Kopfzeile
@@ -30,12 +22,46 @@ h1 {
    10 Pixeln. Auf 360 Pixeln Breite fällt der Versatz auf. */
 .d-header .wrap,
 #main-outlet-wrapper {
-  padding-inline: 0.75rem;
+  padding-inline: 1rem;
 }
 
-/* Antwortzahl und Alter saßen ohne Abstand auf der Rahmenkante der
-   Zeile. Discourse setzt .topic-list .num.posts-map auf padding: 0,
-   darum braucht die Regel dieselbe Selektortiefe. */
-.topic-list .topic-list-item .num {
-  padding-right: 0.75rem;
+/* Die Zeile der Themenliste ist ein tr, Polsterung darauf zeigt keine
+   Wirkung. Sie muss an die Zelle, sonst steht das Profilbild auf der
+   linken Rahmenkante und Antwortzahl und Alter auf der rechten.
+   Der Kindselektor lässt die verschachtelten Zahlenspalten aus, die
+   dieselbe Klasse tragen. */
+.topic-list .topic-list-item > .topic-list-data {
+  padding: 0.75rem;
+}
+
+/* Der Fuß eines Themas
+   Zuvor stand hier .btn-primary { width: 100% }. Das traf jeden
+   gefüllten Knopf, auch den im Themenfuß: der zog sich breit, drängte
+   die kleinen Werkzeugknöpfe in eine schmale Spalte und die brachen
+   dort in drei Reihen um. Statt dessen bekommt genau der eine Knopf
+   die volle Breite, und zwar über flex, nicht über width.
+   -------------------------------------------------------------------------- */
+
+#topic-footer-buttons .topic-footer-main-buttons {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#topic-footer-buttons .topic-footer-main-buttons .btn-primary.create {
+  flex: 1 1 100%;
+  order: -1;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#topic-footer-buttons .topic-footer-main-buttons__actions {
+  flex: 1 1 100%;
+}
+
+/* Discourse blendet auf dem Telefon alle Beschriftungen im Themenfuß
+   aus. Beim Pfeil-Symbol allein ist nicht zu erkennen, dass es der
+   Antworten-Knopf ist. Die Hauptaktion trägt darum ihr Wort, die
+   Werkzeuge daneben bleiben Symbole. */
+html #topic-footer-buttons .topic-footer-main-buttons .btn-primary.create .d-button-label {
+  display: inline;
 }
