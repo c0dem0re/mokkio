@@ -356,6 +356,16 @@ p {
   font-weight: 600;
 }
 
+/* Die Zeile der Themenliste lief außen auf 0.75rem. Neben der
+   breit laufenden Schrift stand der Titel zu dicht an der Kante. */
+.topic-list .topic-list-data:first-of-type {
+  padding-left: 1rem;
+}
+
+.topic-list .topic-list-data:last-of-type {
+  padding-right: 1rem;
+}
+
 /* Das Emoji im Kategorie-Schild läuft bei Discourse auf 0.74em, also
    knapp unter Versalhöhe. Neben dem breit laufenden Monospace liest
    sich das als zu klein, die Zeile wirkt unruhig. Auf 1em steht das
@@ -516,8 +526,13 @@ textarea,
   padding-block: 0.5rem;
 }
 
-/* Logo links und Profilbild rechts standen fast auf der Fensterkante */
-.d-header .wrap {
+/* Logo links und Profilbild rechts standen fast auf der Fensterkante.
+   Der Inhalt darunter lief auf Discourse' eigenen 10 Pixeln: die
+   Seitenleiste stand neun Pixel weiter links als das Logo, die
+   Themenliste acht Pixel weiter rechts als das Profilbild. Beide
+   Kästen tragen jetzt dieselbe Kante. */
+.d-header .wrap,
+#main-outlet-wrapper {
   padding-inline: 1.25rem;
 }
 
