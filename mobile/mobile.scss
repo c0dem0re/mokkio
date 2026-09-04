@@ -30,8 +30,33 @@ h1 {
    linken Rahmenkante und Antwortzahl und Alter auf der rechten.
    Der Kindselektor lässt die verschachtelten Zahlenspalten aus, die
    dieselbe Klasse tragen. */
-.topic-list .topic-list-item > .topic-list-data {
-  padding: 0.75rem;
+.topic-list .topic-list-item {
+  /* Discourse liefert 48 Pixel. Auf dem Telefon nimmt das Bild damit
+     ein Siebtel der Zeilenbreite und drängt den Titel in den Umbruch.
+     Der Wert steht als Variable, weil der Textblock daneben denselben
+     Wert als Einzug braucht: Discourse setzt dort feste 55 Pixel, also
+     48 plus Abstand, und die passen nach der Verkleinerung nicht mehr. */
+  --mokkio-list-avatar: 32px;
+
+  > .topic-list-data {
+    padding: 1.25rem;
+  }
+
+  .pull-left .avatar {
+    width: var(--mokkio-list-avatar);
+    height: var(--mokkio-list-avatar);
+  }
+
+  .topic-item-metadata {
+    margin-left: calc(var(--mokkio-list-avatar) + 0.75rem);
+  }
+}
+
+/* Der Umschalter über der Liste trug den Text ohne Polsterung direkt
+   auf der Rahmenkante und lief eine Schriftstufe über allem anderen. */
+.nav-pills .list-control-toggle-link-trigger {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
 }
 
 /* Der Fuß eines Themas
