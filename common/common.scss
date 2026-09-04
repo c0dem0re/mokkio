@@ -13,6 +13,7 @@
    11. Grundschriftgrad
    12. Seitenfuß
    13. Fortschrittszähler
+   14. Bezahlt und frei
    ========================================================================== */
 
 /* 1. Schriften
@@ -598,5 +599,60 @@ textarea,
 
   .bg {
     background: var(--mokkio-graphite);
+  }
+}
+
+/* 14. Bezahlt und frei
+   Einer Kategorie sah man nicht an, ob sie Geld kostet. Discourse
+   setzt zwar ein Schloss, aber als neun Pixel großes Abzeichen in der
+   Ecke des Emojis. Das übersieht man.
+
+   Discourse kennt keine Klasse für "kostet Geld". Es kennt nur
+   `restricted`, und das trägt auch der Team-Bereich, der nicht
+   verkauft wird. Was die bezahlten Bereiche wirklich unterscheidet,
+   ist die Farbregel aus dem Strukturpapier: bezahlt läuft auf Volt,
+   frei auf Steel. Discourse schreibt diese Farbe als Inline-Style in
+   die Seitenleiste und in das Kategorie-Schild, darüber greift die
+   Regel hier.
+
+   Damit ist die Kategoriefarbe keine Dekoration mehr, sondern die
+   Datenquelle: Bekommt ein bezahlter Bereich im Admin eine andere
+   Farbe, fällt seine Kennzeichnung weg.
+   -------------------------------------------------------------------------- */
+
+/* Seitenleiste: ein Wort statt eines Schlosses. Ein Wort liest sich
+   auf einen Blick, neun Pixel Vorhängeschloss nicht. */
+.sidebar-section-link:has(.sidebar-section-link-prefix[style*="c8ff38" i]) {
+  &::after {
+    content: "PRO";
+    margin-left: auto;
+    flex: none;
+    padding: 0.05em 0.4em;
+    border: 1px solid var(--mokkio-volt);
+    border-radius: 4px;
+    color: var(--mokkio-volt);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  /* Das eingebaute Schloss wäre daneben doppelt gemoppelt. */
+  .prefix-badge {
+    display: none;
+  }
+}
+
+/* Themenliste: das Schild eines bezahlten Bereichs läuft in Volt,
+   samt Schloss. So sieht man in der Liste, welche Beiträge hinter
+   der Bezahlgrenze liegen, ohne sie anzuklicken. */
+.badge-category.restricted .d-icon-lock {
+  width: 1em;
+  height: 1em;
+}
+
+.badge-category__wrapper[style*="c8ff38" i] .badge-category.restricted {
+  .badge-category__name,
+  .d-icon-lock {
+    color: var(--mokkio-volt);
   }
 }
