@@ -11,3 +11,9 @@ h1 {
 .btn-primary {
   width: 100%;
 }
+
+/* Die Kopfzeile aus common.scss läuft auf 64 Pixel. Auf dem Telefon
+   ist der Bildschirm knapp, hier reicht die halbe Zugabe. */
+.d-header {
+  padding-block: 0.25rem;
+}

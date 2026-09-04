@@ -9,6 +9,8 @@
    7. Codeblöcke
    8. Formulare
    9. Discourse-Kernvariablen
+   10. Kopfzeile und Kopfbereich
+   11. Grundschriftgrad
    ========================================================================== */
 
 /* 1. Schriften
@@ -223,16 +225,17 @@ p {
 }
 
 /* Der Ungelesen-Punkt in der Seitenleiste ist ein SVG-Kreis, keine
-   Plakette. Ein Hintergrund macht daraus ein Kästchen hinter dem Punkt.
-   Also nur die Füllung umfärben, von Volt auf Steel: bei zwölf
-   Kategorien wären zwölf Volt-Punkte kein Akzent mehr. */
+   Plakette. Die Regel oben zog ihm einen Hintergrund unter, daraus
+   wurde ein graues Kästchen hinter dem Punkt. Nur die Fläche muss
+   weg, der Punkt selbst bleibt Volt: er ist das einzige Signal in
+   der Seitenleiste und darf auffallen. */
 .sidebar-section-link-suffix.icon.unread {
   background: transparent;
 
   svg,
   .d-icon {
-    fill: var(--mokkio-steel);
-    color: var(--mokkio-steel);
+    fill: var(--mokkio-volt);
+    color: var(--mokkio-volt);
   }
 }
 
@@ -424,6 +427,27 @@ textarea,
   border-radius: var(--mokkio-radius);
 }
 
+/* Discourse zeichnet den Rahmen des Suchfelds aus --d-input-border,
+   einem Blauton, der nicht aus der Palette kommt. */
+.search-menu .search-input {
+  border-color: var(--mokkio-graphite-hi);
+}
+
+/* Die Lupe im Suchfeld ist ein absolut gesetztes Symbol im Feld, kein
+   eigener Knopf. Die Knopfregel aus Abschnitt 3 zog ihr Fläche, Rahmen
+   und Radius über, dadurch stand ein Kästchen über der linken Rundung
+   des Feldes. */
+.search-menu .btn.search-icon {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+  }
+}
+
 ::placeholder {
   color: var(--mokkio-steel);
 }
@@ -451,4 +475,52 @@ textarea,
   /* Der aktive Sidebar-Eintrag hat schon seine Volt-Kante aus
      Abschnitt 5, hier reicht Graphite. */
   --d-sidebar-active-background: var(--mokkio-graphite);
+}
+
+/* 10. Kopfzeile und Kopfbereich
+   Die Kopfzeile lief mit 52 Pixel Höhe, die 41 Pixel hohen Symbole
+   hatten oben und unten je 6 Pixel Luft und klebten am Rand.
+   Sprechblase und Profilbild standen ohne Abstand nebeneinander und
+   lasen sich als ein Block. Werte im Portal über getComputedStyle
+   nachgemessen, nicht geschätzt.
+   -------------------------------------------------------------------------- */
+
+.d-header {
+  /* 52 -> 64 Pixel, damit über und unter den Symbolen 13 statt 6 Pixel
+     stehen. Discourse rechnet --header-offset aus der tatsächlichen
+     Höhe, Seitenleiste und Inhalt rutschen also mit. */
+  padding-block: 0.5rem;
+}
+
+/* Logo links und Profilbild rechts standen fast auf der Fensterkante */
+.d-header .wrap {
+  padding-inline: 1.25rem;
+}
+
+.d-header .icons.d-header-icons {
+  gap: 0.375rem;
+}
+
+/* Der Willkommensbereich sitzt direkt unter der Kopfzeile. Discourse
+   setzt die Polsterung als Shorthand aus drei Variablen, eine eigene
+   padding-top-Regel verliert darum im Kaskadenlauf. Die Variable
+   greift. */
+.welcome-banner .welcome-banner__wrap {
+  --d-welcome-banner-padding-top: 2.5rem;
+}
+
+.welcome-banner .welcome-banner__title {
+  margin-bottom: 1.5rem;
+}
+
+/* 11. Grundschriftgrad
+   IBM Plex Mono läuft breiter und wirkt bei gleicher Punktgröße
+   größer als eine Proportionalschrift. 16 Pixel Grundgröße ließen
+   Seitenleiste, Reiter und Themenliste massig wirken. --base-font-size
+   ist der Hebel, an dem auch die Textgrößen-Einstellung von Discourse
+   hängt: die ganze modulare Skala rückt mit, die Verhältnisse bleiben.
+   -------------------------------------------------------------------------- */
+
+:root {
+  --base-font-size: 0.9375em; /* 16 -> 15 Pixel */
 }
