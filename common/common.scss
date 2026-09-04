@@ -11,6 +11,7 @@
    9. Discourse-Kernvariablen
    10. Kopfzeile und Kopfbereich
    11. Grundschriftgrad
+   12. Seitenfuß
    ========================================================================== */
 
 /* 1. Schriften
@@ -354,6 +355,15 @@ p {
   font-weight: 600;
 }
 
+/* Das Emoji im Kategorie-Schild läuft bei Discourse auf 0.74em, also
+   knapp unter Versalhöhe. Neben dem breit laufenden Monospace liest
+   sich das als zu klein, die Zeile wirkt unruhig. Auf 1em steht das
+   Bild auf derselben Linie wie die Schrift. */
+.badge-category__wrapper .badge-category.--style-emoji .emoji {
+  width: 1em;
+  height: 1em;
+}
+
 /* 7. Codeblöcke
    -------------------------------------------------------------------------- */
 
@@ -536,4 +546,25 @@ textarea,
 
 :root {
   --base-font-size: 0.9375em; /* 16 -> 15 Pixel */
+}
+
+/* 12. Seitenfuß
+   Unter der Themenliste stehen der Hinweis auf weitere Themen und die
+   Discourse-Zeile. Beide saßen ohne Luft aneinander, der Hinweis lief
+   eine Schriftstufe über dem Fließtext, und die letzte Zeile klebte
+   am unteren Rand der Seite.
+   -------------------------------------------------------------------------- */
+
+.more-topics__browse-more {
+  padding-top: 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Die Discourse-Zeile schließt die Seite ab und stand ohne Luft auf
+   dem unteren Rand. Der Abstand sitzt am umschließenden Kasten, nicht
+   am Link selbst: dessen eigenes margin-bottom ließ sich im laufenden
+   Portal nicht überschreiben, auch nicht mit !important. */
+.wrap:has(> .powered-by-discourse) {
+  padding-bottom: 2rem;
 }

@@ -17,3 +17,25 @@ h1 {
 .d-header {
   padding-block: 0.25rem;
 }
+
+/* IBM Plex Mono trägt auf dem Telefon dick auf: neben den kleinen
+   Symbolen wirkten 15 Pixel massig, Schrift und Icons standen nicht
+   im Verhältnis. Eine Stufe runter, die Skala rückt geschlossen mit. */
+:root {
+  --base-font-size: 0.875em; /* 16 -> 14 Pixel */
+}
+
+/* Kopfzeile und Inhalt liefen auf verschiedenen Kanten: die Kopfzeile
+   auf den 1.25rem aus common.scss, der Inhalt auf Discourse' eigenen
+   10 Pixeln. Auf 360 Pixeln Breite fällt der Versatz auf. */
+.d-header .wrap,
+#main-outlet-wrapper {
+  padding-inline: 0.75rem;
+}
+
+/* Antwortzahl und Alter saßen ohne Abstand auf der Rahmenkante der
+   Zeile. Discourse setzt .topic-list .num.posts-map auf padding: 0,
+   darum braucht die Regel dieselbe Selektortiefe. */
+.topic-list .topic-list-item .num {
+  padding-right: 0.75rem;
+}
