@@ -365,18 +365,31 @@ kbd,
   font-size: 0.9rem;
 }
 
+/* Codeblöcke brechen um, statt seitwärts zu schieben. Was hier steht,
+   sind Prompts zum Kopieren, kein Programmtext: die Zeile gehört ganz
+   sichtbar, nicht hinter einem Schieberegler. Der Scroller saß dabei
+   nicht am pre, sondern am code.hljs darin, das Highlight.js auf
+   overflow-x: auto setzt. Darum beide Ebenen.
+
+   Rechts bleiben 4rem frei. Kopier- und Vollbildknopf liegen oben
+   rechts im Block, ohne Reserve läuft die erste Zeile darunter. */
 pre {
   background: var(--mokkio-graphite);
   border: 1px solid var(--mokkio-graphite-hi);
   border-left: 3px solid var(--mokkio-volt);
   border-radius: var(--mokkio-radius);
-  padding: 1rem 1.25rem;
-  overflow-x: auto;
+  padding: 1rem 4rem 1rem 1.25rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
 
   code {
     background: transparent;
     padding: 0;
     color: var(--mokkio-frost);
+    white-space: inherit;
+    word-break: break-word;
+    overflow-x: visible;
   }
 }
 
